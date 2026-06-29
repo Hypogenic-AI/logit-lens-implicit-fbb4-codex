@@ -1,0 +1,25 @@
+idea:
+  title: Logit Lens with Implicit Tokens
+  domain: artificial_intelligence
+  hypothesis: 'Large language models have implicit vocabularies that are not strictly
+    part of the vocabulary matrices but function similarly; it is possible to create
+    a logit lens that utilizes these implicit tokens.
+
+    '
+  background:
+    description: 'There are now many signs that LLMs have implicit vocab, that aren''t
+      strictly part of the vocabulary matrices, but almost act like it. (See: https://arxiv.org/abs/2406.20086)
+      Can we make a logit lens that uses these?
+
+      '
+    papers:
+    - description: https://arxiv.org/abs/2406.20086
+  metadata:
+    author: Ari Holtzman
+    source: IdeaHub
+    source_url: https://hypogenic.ai/ideahub/idea/tO8okrersuj6MqmTj1VG
+    idea_id: logit_lens_with_implicit_token_20260629_043532_f7f8f297
+    created_at: '2026-06-29T04:35:32.597987'
+    status: submitted
+    github_repo_name: logit-lens-implicit-fbb4-codex
+    github_repo_url: https://github.com/Hypogenic-AI/logit-lens-implicit-fbb4-codex
