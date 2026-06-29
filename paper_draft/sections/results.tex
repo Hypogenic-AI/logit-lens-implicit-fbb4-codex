@@ -1,0 +1,40 @@
+\section{Results}
+\label{sec:results}
+
+\para{Main comparison.}
+\Tabref{tab:main_results} reports validation-selected layers and held-out test performance. The layer-local \itl selects layer 5 and reaches 19.53\% test top-1 accuracy, compared with 12.50\% for \finalmajority and 0.78\% for \majorityword. Among learned whole-word methods, \itl also has the best validation top-1, test top-1, and test MRR. \rawproto reaches a higher test top-5 accuracy at its selected layer, but its top-1 accuracy remains 5.47 points below \itl.
+
+\input{tables/main_results}
+
+\para{Statistical evidence.}
+\Tabref{tab:stat_tests} shows paired test-set comparisons. The primary comparison is \itl layer 5 versus \finalmajority. The accuracy difference is +7.03 percentage points with bootstrap \ci [2.53, 11.72], paired randomization $p=0.0045$, and McNemar exact $p=0.0046$. The selected \itl also beats \rawproto layer 22 by +5.47 points and \meansubtok layer 0 by +8.59 points, with positive confidence intervals in both cases.
+
+\input{tables/stat_tests}
+
+\para{Layer-wise behavior.}
+\Figref{fig:layerwise} shows how retrieval quality changes by layer. \itl rises quickly and peaks at layer 5, then declines gradually. \rawproto peaks much later, at layer 22, which suggests that final-layer prototypes are geometrically best matched to late states. The explicit final-subtoken diagnostic is strongest at layer 0, with 20.12\% test accuracy over the 16 suffix IDs, and falls in early and middle layers while word-level \itl improves. This pattern is qualitatively consistent with token erasure: surface suffix identity becomes less directly recoverable as a whole-word representation becomes more decodable.
+
+\begin{figure}[t]
+    \centering
+    \begin{minipage}[t]{0.48\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{figures/layer_top1_accuracy.png}\\[-2pt]
+        {\small (a) Top-1 accuracy}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.48\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{figures/layer_mrr.png}\\[-2pt]
+        {\small (b) Mean reciprocal rank}
+    \end{minipage}
+    \caption{Layer-wise decoding results on validation and test splits. \itl peaks early at layer 5, while the raw final-prototype baseline is strongest late in the model. The final-subtoken diagnostic measures suffix-token recovery rather than whole-word retrieval.}
+    \label{fig:layerwise}
+\end{figure}
+
+\para{Ablation: translating to final prototypes is weak.}
+The ridge-to-final ablation is the closest analogue to the \tunedlens idea in this experiment: map each layer into a fixed final-layer prototype space, then decode against that table. It performs poorly, selecting layer 17 by validation top-1 and reaching only 3.71\% test top-1. This does not show that affine translators cannot work in principle. It does show that with 10 training occurrences per word and 896-dimensional states, the simple ridge translator is a poor fit compared with layer-local prototype rows.
+
+\para{Error analysis.}
+\Tabref{tab:error_examples} gives representative failures. Many mistakes stay inside the same final-subtoken group, such as `england' decoded as `highland' or `queensland'. However, not all errors are suffix-only: one `ireland' occurrence is ranked second as `lebanon'. The failures suggest that the hidden state mixes whole-word identity with residual orthographic information and contextual semantics. This is also why the final-subtoken control is important: \itl improves over suffix identity, but suffix and topic remain substantial confounds.
+
+\input{tables/error_examples}

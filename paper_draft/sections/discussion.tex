@@ -1,0 +1,14 @@
+\section{Discussion}
+\label{sec:discussion}
+
+\para{What the result supports.}
+The experiment supports a narrow, testable claim: a supervised layer-local table of implicit-token prototypes can recover held-out multi-token word identity above strong controls. The improvement over \finalmajority is important because each suffix group contains eight candidate words with the same final tokenizer piece. The effect is therefore not explained by simply reading out the last subtoken. The improvement over \meansubtok also suggests that the signal is not only a compositional average of input embeddings.
+
+\para{Why layer-local prototypes matter.}
+The strongest method is not the ridge-to-final translator. Instead, each layer needs its own prototype table. This points to a practical lesson for implicit-token lenses: the implicit item may be linearly accessible in a layer's local geometry even when a small-data affine map into a final-layer space is unreliable. This is compatible with prior work showing that word-level information emerges in early and middle layers \citep{kaplan2025tokens}, while the final representation is optimized for next-token prediction rather than current-word naming.
+
+\para{Limitations.}
+The implicit vocabulary is supervised and fixed to known word types. The experiment does not discover arbitrary latent vocabulary entries. It uses one small open model, one English corpus, and occurrence-level splits from \wikitext, so article and domain correlations may help prototypes. Candidate words are frequent enough for 16 occurrences and are balanced into final-subtoken groups; rarer words, nonwords, named entities, and phrases may behave differently. The method also establishes decodability, not causality. We do not show that the model relies on the decoded prototype for downstream prediction. Finally, the ridge failure may reflect sample size, dimensionality, and regularization rather than a fundamental weakness of translated implicit-token spaces.
+
+\para{Broader implications.}
+Tokenizer-bound interpretability tools can miss categories that the model internally treats as larger units. A reusable implicit vocabulary table is one way to test for those categories without asking the model to verbalize every hidden state. If scaled and made less supervised, this could help compare tokenizers, diagnose detokenization failures, initialize vocabulary expansion, and localize where word, entity, or phrase representations become stable.

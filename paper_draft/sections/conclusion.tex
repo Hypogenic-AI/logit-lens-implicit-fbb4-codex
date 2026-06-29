@@ -1,0 +1,6 @@
+\section{Conclusion}
+\label{sec:conclusion}
+
+We introduced an \methodname that decodes hidden states into whole multi-token word types rather than explicit tokenizer IDs. On \qwen and \wikitext, a layer-local prototype table recovers held-out word identity at 19.53\% top-1 accuracy over 128 candidates, beating final-subtoken majority, mean subtoken embeddings, and raw final-layer prototypes with paired statistical support.
+
+The key takeaway is that implicit-token decoding is feasible in a supervised prototype setting, but the geometry is layer-specific. The next step is to remove some supervision: mine candidate implicit items from token-erasure footprints, validate them with Patchscopes, and test causal interventions that replace or ablate an implicit word prototype. Scaling the same evaluation to larger Qwen and Llama-family models, named entities, phrases, and non-English data will show how general the implicit-token lens really is.

@@ -1,0 +1,19 @@
+\begin{table}[t]
+    \centering
+    \caption{Validation-selected whole-word retrieval results. Higher is better for all metrics. Best comparable values in each metric column are in \textbf{bold}.}
+    \label{tab:main_results}
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{@{}lcccc@{}}
+        \toprule
+        \textbf{Method} & \textbf{Selected layer} & \textbf{Validation top-1} & \textbf{Test top-1} & \textbf{Test top-5 / MRR} \\
+        \midrule
+        \methodname & 5 & \textbf{21.09\%} & \textbf{19.53\%} & 25.59\% / \textbf{0.240} \\
+        \finalmajority & -- & 12.50\% & 12.50\% & -- / -- \\
+        \rawproto & 22 & 11.33\% & 14.06\% & \textbf{29.69\%} / 0.220 \\
+        \meansubtok & 0 & 8.59\% & 10.94\% & 21.88\% / 0.175 \\
+        \ridgeitl & 17 & 6.25\% & 3.71\% & 11.52\% / 0.092 \\
+        \majorityword & -- & 0.78\% & 0.78\% & -- / -- \\
+        \bottomrule
+    \end{tabular}
+    }
+\end{table}

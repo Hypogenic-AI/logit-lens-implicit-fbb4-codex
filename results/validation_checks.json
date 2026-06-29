@@ -1,0 +1,21 @@
+{
+  "hidden_states_shape": [
+    2048,
+    25,
+    896
+  ],
+  "all_hidden_finite": true,
+  "prototype_shape": [
+    128,
+    896
+  ],
+  "all_prototypes_finite": true,
+  "all_splits_present": true,
+  "n_candidate_words": 128,
+  "outputs": [
+    "results/metrics_layerwise.csv",
+    "results/summary.json",
+    "figures/layer_top1_accuracy.png",
+    "figures/layer_mrr.png"
+  ]
+}

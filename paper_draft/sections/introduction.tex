@@ -1,0 +1,34 @@
+\section{Introduction}
+\label{sec:introduction}
+
+Logit lenses are useful because they translate hidden states into something readers can inspect: a distribution over vocabulary items. That output space is also their main constraint. If a model has composed several tokenizer pieces into a word-like internal representation, a standard lens can still only name explicit tokenizer IDs.
+
+This constraint matters for modern language models because tokenization often splits words, names, and expressions into pieces whose meanings do not match the full item. Recent work on token erasure argues that representations at the final token of a multi-token expression rapidly lose component-token information, leaving a footprint of a higher-level implicit item \citep{feucht2024token}. Related inner-lexicon work finds that LLMs reconstruct whole-word representations from subword sequences and can use such representations for vocabulary expansion \citep{kaplan2025tokens}. These results raise a direct question for lens methods: can we decode into the implicit item itself, rather than into its last tokenizer piece?
+
+Existing tools do not fully answer this question. \tunedlens learns affine translators that make intermediate states decodable, but its output space remains the model's explicit vocabulary \citep{belrose2023eliciting}. Patchscopes can elicit natural-language descriptions of hidden states, but they do not define a fixed vocabulary table that can be reused for retrieval \citep{ghandeharioun2024patchscopes}. Prompt and prefix tuning show that continuous vectors can act like virtual tokens \citep{lester2021power,li2021prefix,liu2022ptuning}, but they are usually evaluated through task performance rather than through direct decoding of latent lexical items.
+
+We propose an \methodname (\itl): a logit-lens-style decoder whose output rows are prototypes for multi-token words. \Figref{fig:method} shows the setup. We collect occurrences of multi-token word types, store hidden states at the final subtoken position, and average training states into one normalized prototype row per word and layer. At evaluation time, the lens scores a held-out hidden state against all implicit-token rows by cosine similarity.
+
+\begin{figure}[t]
+    \centering
+    \setlength{\tabcolsep}{4pt}
+    \begin{tabular}{@{}c@{\quad$\rightarrow$\quad}c@{\quad$\rightarrow$\quad}c@{}}
+        \fbox{\parbox{0.25\linewidth}{\centering Multi-token words\\{\small grouped by final subtoken}}} &
+        \fbox{\parbox{0.25\linewidth}{\centering Layer states\\{\small final subtoken position}}} &
+        \fbox{\parbox{0.25\linewidth}{\centering Implicit vocabulary\\{\small cosine retrieval over words}}}
+    \end{tabular}
+    \caption{Overview of the \itl experiment. We define implicit tokens as whole word types that are absent as single tokenizer entries, build layer-local prototype rows from training occurrences, and retrieve held-out word identity from intermediate hidden states.}
+    \label{fig:method}
+\end{figure}
+
+Our main result is positive but bounded. On \qwen and local \wikitext, a validation-selected layer-local \itl recovers held-out identity among 128 multi-token words with 19.53\% test top-1 accuracy. This is above final-subtoken majority at 12.50\%, majority-word chance at 0.78\%, and the strongest raw final-prototype baseline at 14.06\%. The paired improvement over final-subtoken majority is 7.03 percentage points with bootstrap \ci [2.53, 11.72]. The same \itl also beats the raw final-prototype baseline by 5.47 points with bootstrap \ci [2.15, 8.79]. At the same time, a ridge translator to final-layer prototypes fails, reaching only 3.71\% top-1 accuracy, so the evidence favors layer-local prototype tables rather than a universal translated output space in this small-data setting.
+
+Our contributions are:
+\begin{itemize}[leftmargin=*,itemsep=0pt,topsep=0pt]
+    \item We propose a prototype implicit-token output space for logit-lens-style decoding of multi-token word representations.
+    \item We construct a leakage-controlled vocabulary of 128 multi-token words with 16 final-subtoken groups and 8 words per group.
+    \item We compare \itl against final-subtoken, compositional embedding, raw final-prototype, and ridge-to-final baselines with paired statistical tests.
+    \item We analyze layer-wise behavior and representative errors, showing that word-level decoding peaks early while explicit final-subtoken identity is strongest at the embedding layer.
+\end{itemize}
+
+The rest of the paper is organized as follows. \Secref{sec:related} positions the experiment relative to vocabulary-space lenses and implicit lexicon work. \Secref{sec:method} defines the \itl, dataset, baselines, and metrics. \Secref{sec:results} reports quantitative results and error analysis. \Secref{sec:discussion} discusses what this experiment does and does not establish, and \secref{sec:conclusion} concludes.

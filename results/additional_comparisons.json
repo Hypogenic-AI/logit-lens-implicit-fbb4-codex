@@ -1,0 +1,72 @@
+{
+  "itl_layer5": {
+    "accuracy": 0.1953125,
+    "ci95": [
+      0.162109375,
+      0.228515625
+    ]
+  },
+  "raw_final_layer22": {
+    "accuracy": 0.140625,
+    "ci95": [
+      0.111328125,
+      0.171875
+    ]
+  },
+  "raw_final_layer5": {
+    "accuracy": 0.01953125,
+    "ci95": [
+      0.0078125,
+      0.033203125
+    ]
+  },
+  "mean_subtoken_layer0": {
+    "accuracy": 0.109375,
+    "ci95": [
+      0.083984375,
+      0.13671875
+    ]
+  },
+  "itl_layer5_vs_raw_final_layer22": {
+    "accuracy_difference": 0.0546875,
+    "diff_ci95": [
+      0.021484375,
+      0.087890625
+    ],
+    "paired_randomization_p": 0.0022997700229977,
+    "mcnemar_exact": {
+      "a_only": 53,
+      "b_only": 25,
+      "discordant": 78,
+      "p_value": 0.00203114037416273
+    }
+  },
+  "itl_layer5_vs_raw_final_layer5": {
+    "accuracy_difference": 0.17578125,
+    "diff_ci95": [
+      0.142578125,
+      0.208984375
+    ],
+    "paired_randomization_p": 9.999000099990002e-05,
+    "mcnemar_exact": {
+      "a_only": 90,
+      "b_only": 0,
+      "discordant": 90,
+      "p_value": 1.6155871338926322e-27
+    }
+  },
+  "itl_layer5_vs_mean_subtoken_layer0": {
+    "accuracy_difference": 0.0859375,
+    "diff_ci95": [
+      0.05078125,
+      0.12109375
+    ],
+    "paired_randomization_p": 9.999000099990002e-05,
+    "mcnemar_exact": {
+      "a_only": 68,
+      "b_only": 24,
+      "discordant": 92,
+      "p_value": 4.935351419046992e-06
+    }
+  }
+}

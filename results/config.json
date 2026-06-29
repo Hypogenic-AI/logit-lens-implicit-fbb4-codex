@@ -1,0 +1,23 @@
+{
+  "seed": 42,
+  "model_name": "Qwen/Qwen2.5-0.5B",
+  "dataset_path": "datasets/wikitext2_raw",
+  "output_dir": "results",
+  "figure_dir": "figures",
+  "hf_home": "artifacts/hf_cache",
+  "max_words": 128,
+  "min_occurrences": 16,
+  "train_per_word": 10,
+  "val_per_word": 2,
+  "test_per_word": 4,
+  "final_group_min_types": 8,
+  "max_words_per_final_group": 8,
+  "max_context_chars": 420,
+  "max_length": 96,
+  "batch_size": 64,
+  "ridge_lambda": 10.0,
+  "bootstrap_samples": 3000,
+  "randomization_samples": 6000,
+  "dtype": "float16",
+  "device": "auto"
+}

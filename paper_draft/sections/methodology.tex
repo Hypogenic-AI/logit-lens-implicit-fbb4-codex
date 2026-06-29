@@ -1,0 +1,44 @@
+\section{Methodology}
+\label{sec:method}
+
+\para{Problem setup.}
+Let $\gV_I$ be a fixed implicit vocabulary of multi-token word types. For an occurrence $i$ of word $y_i \in \gV_I$, we feed the context ending at that word into a frozen causal language model and extract the hidden state $\vh_{\ell,i}\in\sR^d$ at the final subtoken position for layer $\ell$. The task is whole-word retrieval: rank every candidate $w\in\gV_I$ and recover $y_i$ on held-out occurrences. This is different from ordinary next-token decoding because the correct label is a current whole word, not the next explicit tokenizer ID.
+
+\para{Candidate vocabulary and data.}
+We use local raw \wikitext and \qwen. Candidate words are lowercased alphabetic word types that tokenize into at least two pieces under the Qwen tokenizer. To reduce final-subtoken leakage, we arrange the 128 candidates into 16 final-subtoken groups with 8 words per group. Therefore, knowing only the final tokenizer ID gives at most one correct word out of eight within a group under the balanced evaluation split. Each word contributes 10 training, 2 validation, and 4 test occurrences, for 2,048 total examples. \Tabref{tab:setup} summarizes the experimental setup, and \tabref{tab:vocab_examples} shows two candidate groups.
+
+\input{tables/setup}
+\input{tables/vocab_examples}
+
+\para{Layer-local implicit token lens.}
+The primary \itl builds one implicit vocabulary table per layer. For every word $w$ and layer $\ell$, we average normalized training states and normalize the resulting row:
+\begin{equation}
+    \vp_{\ell,w}
+    =
+    \frac{
+        \frac{1}{|\train_w|}
+        \sum_{i\in \train_w}
+        \frac{\vh_{\ell,i}}{\|\vh_{\ell,i}\|_2}
+    }{
+        \left\|
+        \frac{1}{|\train_w|}
+        \sum_{i\in \train_w}
+        \frac{\vh_{\ell,i}}{\|\vh_{\ell,i}\|_2}
+        \right\|_2
+    }.
+\end{equation}
+At validation or test time, a held-out state is scored by cosine similarity,
+\begin{equation}
+    s_\ell(i,w)=
+    \frac{\vh_{\ell,i}}{\|\vh_{\ell,i}\|_2}^{\top}\vp_{\ell,w}.
+\end{equation}
+The predicted implicit token is $\argmax_{w\in\gV_I} s_\ell(i,w)$. We select the \itl layer by validation top-1 accuracy and report the corresponding test metrics.
+
+\para{Baselines and ablations.}
+We compare against five controls. \majorityword always predicts the most common training word and gives the 1/128 chance rate under balanced labels. \finalmajority uses only the target occurrence's final tokenizer ID and predicts the most frequent training word in that suffix group. \meansubtok averages each candidate word's input embedding rows and scores hidden states against those compositional vectors. \rawproto builds prototypes from final-layer training states only, then compares every layer directly to this fixed final-layer table. \ridgeitl trains a ridge-regularized affine map, with an unregularized intercept, from each layer's training states into the final-layer prototype space; translated states are normalized before scoring against final prototypes. We also report an explicit final-subtoken embedding diagnostic over 16 final-token IDs. This diagnostic measures recoverability of the suffix token, not whole-word decoding, so we do not treat it as a competing whole-word method.
+
+\para{Metrics and statistical tests.}
+We report top-1 accuracy, top-5 accuracy, and mean reciprocal rank (MRR) for whole-word retrieval. All primary comparisons use validation-selected layers and the same 512 test occurrences. We estimate accuracy and paired accuracy-difference intervals with 3,000 bootstrap samples. We also run paired randomization tests with 6,000 samples and McNemar exact tests for top-1 correctness disagreements.
+
+\para{Implementation details.}
+The model is `Qwen/Qwen2.5-0.5B'. Hidden states include the embedding level and 24 transformer layers, for 25 hidden-state levels with hidden size 896. During extraction, we apply the model's final normalization module to each layer state, normalize vectors, and store final-position hidden states. The run used batch size 64, maximum sequence length 96, seed 42, and one NVIDIA RTX A6000. Key package versions were Python 3.12.8, PyTorch 2.12.1+cu130, Transformers 5.12.1, Datasets 5.0.0, NumPy 2.5.0, SciPy 1.18.0, and scikit-learn 1.9.0.

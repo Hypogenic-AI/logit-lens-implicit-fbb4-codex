@@ -1,0 +1,27 @@
+{
+  "success": true,
+  "stages": {
+    "resource_finder": {
+      "success": true,
+      "completion_marker": "/workspaces/logit-lens-implicit-fbb4-codex/.resource_finder_complete",
+      "outputs": {
+        "literature_review": "/workspaces/logit-lens-implicit-fbb4-codex/literature_review.md",
+        "resources_catalog": "/workspaces/logit-lens-implicit-fbb4-codex/resources.md",
+        "papers_dir": "/workspaces/logit-lens-implicit-fbb4-codex/papers",
+        "datasets_dir": "/workspaces/logit-lens-implicit-fbb4-codex/datasets",
+        "code_dir": "/workspaces/logit-lens-implicit-fbb4-codex/code"
+      },
+      "log_file": "/workspaces/logit-lens-implicit-fbb4-codex/logs/resource_finder_codex.log",
+      "transcript_file": "/workspaces/logit-lens-implicit-fbb4-codex/logs/resource_finder_codex_transcript.jsonl",
+      "elapsed_time": 1020.8041281700134
+    },
+    "experiment_runner": {
+      "success": true,
+      "return_code": 0,
+      "elapsed_time": 977.9739615917206,
+      "log_file": "/workspaces/logit-lens-implicit-fbb4-codex/logs/execution_codex.log",
+      "transcript_file": "/workspaces/logit-lens-implicit-fbb4-codex/logs/execution_codex_transcript.jsonl"
+    }
+  },
+  "work_dir": "/workspaces/logit-lens-implicit-fbb4-codex"
+}

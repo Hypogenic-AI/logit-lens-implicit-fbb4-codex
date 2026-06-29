@@ -1,0 +1,15 @@
+{
+  "wikitext2_raw": {
+    "test": 4358,
+    "train": 36718,
+    "validation": 3760
+  },
+  "glue_sst2": {
+    "train": 67349,
+    "validation": 872,
+    "test": 1821
+  },
+  "lambada_openai": {
+    "test": 5153
+  }
+}

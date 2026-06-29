@@ -1,0 +1,16 @@
+\begin{table}[t]
+    \centering
+    \caption{Paired test-set comparisons for top-1 accuracy. Differences are \itl minus the comparison method. Confidence intervals are paired bootstrap intervals.}
+    \label{tab:stat_tests}
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{@{}lcccc@{}}
+        \toprule
+        \textbf{Comparison} & \textbf{Accuracy diff.} & \textbf{Bootstrap \ci} & \textbf{Randomization $p$} & \textbf{McNemar $p$} \\
+        \midrule
+        \itl layer 5 vs. \finalmajority & +7.03 pp & [2.53, 11.72] pp & 0.0045 & 0.0046 \\
+        \itl layer 5 vs. \rawproto layer 22 & +5.47 pp & [2.15, 8.79] pp & 0.0023 & 0.0020 \\
+        \itl layer 5 vs. \meansubtok layer 0 & +8.59 pp & [5.08, 12.11] pp & $<0.001$ & $<0.001$ \\
+        \bottomrule
+    \end{tabular}
+    }
+\end{table}

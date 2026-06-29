@@ -1,0 +1,10 @@
+PDF: papers/2104.08691_prompt_tuning_scale.pdf
+Total pages: 15
+Pages per chunk: 3
+
+Chunks:
+  2104.08691_prompt_tuning_scale_chunk_001.pdf: pages 1-3
+  2104.08691_prompt_tuning_scale_chunk_002.pdf: pages 4-6
+  2104.08691_prompt_tuning_scale_chunk_003.pdf: pages 7-9
+  2104.08691_prompt_tuning_scale_chunk_004.pdf: pages 10-12
+  2104.08691_prompt_tuning_scale_chunk_005.pdf: pages 13-15

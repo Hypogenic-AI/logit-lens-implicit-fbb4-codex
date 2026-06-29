@@ -1,0 +1,20 @@
+\begin{table}[t]
+    \centering
+    \caption{Experimental setup. The vocabulary is balanced so that each final-subtoken group contains eight word types.}
+    \label{tab:setup}
+    \begin{tabular}{@{}ll@{}}
+        \toprule
+        \textbf{Component} & \textbf{Value} \\
+        \midrule
+        Model & \qwen (`Qwen/Qwen2.5-0.5B') \\
+        Dataset & Local raw \wikitext \\
+        Candidate implicit vocabulary & 128 lowercased alphabetic multi-token words \\
+        Final-subtoken control & 16 groups, 8 words per final tokenizer piece \\
+        Splits & 10 train, 2 validation, 4 test occurrences per word \\
+        Total examples & 2,048 (1,280 train; 256 validation; 512 test) \\
+        Hidden states & 25 levels including embeddings; hidden size 896 \\
+        Extraction & Final subtoken position, max length 96, batch size 64 \\
+        Hardware & One NVIDIA RTX A6000 \\
+        \bottomrule
+    \end{tabular}
+\end{table}

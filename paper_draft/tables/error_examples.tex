@@ -1,0 +1,14 @@
+\begin{table}[t]
+    \centering
+    \caption{Representative \itl layer-5 errors on held-out examples. Some failures preserve the final tokenizer piece, while others reflect contextual or semantic confusions beyond the suffix group.}
+    \label{tab:error_examples}
+    \begin{tabular}{@{}llcl@{}}
+        \toprule
+        \textbf{Target} & \textbf{Prediction} & \textbf{Rank} & \textbf{Shared final token} \\
+        \midrule
+        england & highland & 10 & yes (`land') \\
+        ireland & lebanon & 2 & no \\
+        england & queensland & 114 & yes (`land') \\
+        \bottomrule
+    \end{tabular}
+\end{table}

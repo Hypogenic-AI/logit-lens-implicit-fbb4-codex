@@ -1,0 +1,14 @@
+\section{Related Work}
+\label{sec:related}
+
+\para{Vocabulary-space lenses.}
+The standard logit lens projects intermediate activations through the final unembedding, making hidden states readable as next-token distributions. \tunedlens improves this idea by learning a layer-specific affine translator before decoding into the vocabulary \citep{belrose2023eliciting}. Future Lens extends hidden-state decoding toward later tokens rather than only the immediate next token \citep{pal2023future}. These methods show that hidden states contain decodable information, but their categories are still explicit tokenizer IDs or future explicit tokens. Our experiment keeps the lens-style retrieval interface but changes the output space to whole multi-token word labels.
+
+\para{Implicit lexical representations.}
+Token erasure provides direct motivation for an implicit-token output space. \citet{feucht2024token} find that last-token representations for multi-token words and named entities lose component-token information early, and they use this erasure pattern as evidence for implicit vocabulary items. \citet{kaplan2025tokens} similarly argue that LLMs perform intrinsic detokenization, reconstructing whole-word representations from subword inputs in early and middle layers. Work on transformer feed-forward layers as key-value memories also supports the idea that model components can retrieve concept-like information through directions that are not simply surface token IDs \citep{geva2021transformer}. We build on this line by asking whether a fixed table of whole-word prototypes can decode held-out occurrences quantitatively.
+
+\para{Natural-language inspection and virtual tokens.}
+Patchscopes use activation patching and target prompts to make hidden states inspectable through generated language \citep{ghandeharioun2024patchscopes}. This is more expressive than a vocabulary projection, but it is less directly a reusable table of categories. Continuous prompt methods provide a complementary precedent: prompt tuning, prefix tuning, and P-Tuning learn vectors that function like tokens outside the ordinary tokenizer matrix \citep{lester2021power,li2021prefix,liu2022ptuning}. AutoPrompt searches for discrete prompt tokens instead \citep{shin2020autoprompt}. These approaches show that token-like behavior is not limited to static vocabulary rows. Our focus is narrower: we do not learn task prompts, but decode naturally occurring hidden states into a supervised implicit vocabulary.
+
+\para{Model and corpus.}
+We run the experiment on \qwen, part of the Qwen2.5 family \citep{qwen2025qwen25}, using local raw \wikitext data derived from the WikiText language modeling corpus \citep{merity2016pointer}. The setup is intentionally small enough to cache all hidden states and to evaluate paired differences on the same held-out occurrences.

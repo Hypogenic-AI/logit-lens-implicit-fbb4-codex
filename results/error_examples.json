@@ -1,0 +1,488 @@
+[
+  {
+    "example_id": 12,
+    "target": "england",
+    "predicted": "highland",
+    "rank": 10,
+    "context_tail": " In 1997 , Clive Woodward became England 's coach . That year , England drew with New Zealand at Twickenham after being heavily defeated in Manchester the week before . England",
+    "target_pieces": [
+      "\u0120eng",
+      "land"
+    ],
+    "final_token": "land"
+  },
+  {
+    "example_id": 13,
+    "target": "england",
+    "predicted": "highland",
+    "rank": 10,
+    "context_tail": " He scored 22 goals in his 23 England",
+    "target_pieces": [
+      "\u0120eng",
+      "land"
+    ],
+    "final_token": "land"
+  },
+  {
+    "example_id": 14,
+    "target": "england",
+    "predicted": "queensland",
+    "rank": 114,
+    "context_tail": "age pad @-@ play and encourage leg spin bowling , a new variant of the lbw law was introduced , initially in Australia and the West Indies in the 1969 \u2013 70 season , then in England",
+    "target_pieces": [
+      "\u0120eng",
+      "land"
+    ],
+    "final_token": "land"
+  },
+  {
+    "example_id": 15,
+    "target": "england",
+    "predicted": "irish",
+    "rank": 81,
+    "context_tail": " \" the most popular , populist and consistently successful arts organisation ever to come out of Wales ... with the loyalty and affection of audiences in Cardiff and across England",
+    "target_pieces": [
+      "\u0120eng",
+      "land"
+    ],
+    "final_token": "land"
+  },
+  {
+    "example_id": 28,
+    "target": "ireland",
+    "predicted": "highland",
+    "rank": 26,
+    "context_tail": " The Romans would later refer to Ireland by this name too in its Latinised form , Hibernia , or Scotia . Ptolemy records sixteen nations inhabiting every part of Ireland",
+    "target_pieces": [
+      "\u0120ire",
+      "land"
+    ],
+    "final_token": "land"
+  },
+  {
+    "example_id": 29,
+    "target": "ireland",
+    "predicted": "hardy",
+    "rank": 78,
+    "context_tail": "ul metalworking , which produced new weapons and tools , along with fine gold decoration and jewellery , such as brooches and torcs . According to John T. Koch and others , Ireland",
+    "target_pieces": [
+      "\u0120ire",
+      "land"
+    ],
+    "final_token": "land"
+  },
+  {
+    "example_id": 30,
+    "target": "ireland",
+    "predicted": "lebanon",
+    "rank": 2,
+    "context_tail": "he second @-@ most populous island in Europe after Great Britain . Just under 4 @.@ 6 million live in the Republic of Ireland and just over 1 @.@ 8 million live in Northern Ireland",
+    "target_pieces": [
+      "\u0120ire",
+      "land"
+    ],
+    "final_token": "land"
+  },
+  {
+    "example_id": 31,
+    "target": "ireland",
+    "predicted": "highland",
+    "rank": 26,
+    "context_tail": " The patronym given by the Chronicle of Mann states that Gofraid 's father was from \" Ysland \" , a place which could refer to either Iceland , Islay , or Ireland",
+    "target_pieces": [
+      "\u0120ire",
+      "land"
+    ],
+    "final_token": "land"
+  },
+  {
+    "example_id": 44,
+    "target": "maryland",
+    "predicted": "carey",
+    "rank": 4,
+    "context_tail": "hree neighborhood activists who had already declared their intentions to run . Carl Adair , a public school teacher who had run unsuccessfully for the City Council and the Maryland",
+    "target_pieces": [
+      "\u0120mary",
+      "land"
+    ],
+    "final_token": "land"
+  },
+  {
+    "example_id": 45,
+    "target": "maryland",
+    "predicted": "highland",
+    "rank": 75,
+    "context_tail": " Maryland",
+    "target_pieces": [
+      "\u0120mary",
+      "land"
+    ],
+    "final_token": "land"
+  },
+  {
+    "example_id": 47,
+    "target": "maryland",
+    "predicted": "highland",
+    "rank": 75,
+    "context_tail": " During the 2008 season , political discussions were common in the Maryland",
+    "target_pieces": [
+      "\u0120mary",
+      "land"
+    ],
+    "final_token": "land"
+  },
+  {
+    "example_id": 60,
+    "target": "queensland",
+    "predicted": "croatian",
+    "rank": 32,
+    "context_tail": " population was split into three subspecies in 1999 by Richard Schodde \u2014 titaniota from Cape York Peninsula in Queensland as far south as Mareeba , lepidota from central Queensland",
+    "target_pieces": [
+      "\u0120queens",
+      "land"
+    ],
+    "final_token": "land"
+  },
+  {
+    "example_id": 63,
+    "target": "queensland",
+    "predicted": "highland",
+    "rank": 74,
+    "context_tail": " \u2020 \u2014 A game postponed from Round 7 , held in Round 8 , was played with Victoria Aces as the away team and Queensland",
+    "target_pieces": [
+      "\u0120queens",
+      "land"
+    ],
+    "final_token": "land"
+  },
+  {
+    "example_id": 77,
+    "target": "portland",
+    "predicted": "richardson",
+    "rank": 7,
+    "context_tail": "quent gold discoveries at Rocky Bar in 1863 and Atlanta in 1864 increased the rush of people to Idaho , and in 1863 Idaho City , with a population of 6 @,@ 267 , surpassed Portland",
+    "target_pieces": [
+      "\u0120port",
+      "land"
+    ],
+    "final_token": "land"
+  },
+  {
+    "example_id": 78,
+    "target": "portland",
+    "predicted": "highland",
+    "rank": 120,
+    "context_tail": " Originally sized for 75 families , Temple Beth Israel 's Portland",
+    "target_pieces": [
+      "\u0120port",
+      "land"
+    ],
+    "final_token": "land"
+  },
+  {
+    "example_id": 79,
+    "target": "portland",
+    "predicted": "highland",
+    "rank": 120,
+    "context_tail": " After obtaining guns the conspirators returned to Portland , Oregon . They rented out an apartment in Portland",
+    "target_pieces": [
+      "\u0120port",
+      "land"
+    ],
+    "final_token": "land"
+  },
+  {
+    "example_id": 92,
+    "target": "lowland",
+    "predicted": "russians",
+    "rank": 51,
+    "context_tail": "ritish infantry . Their situation was now precarious , as their main attacking force was well past the right of the main British infantry positions ; infantry in the 52nd ( Lowland",
+    "target_pieces": [
+      "\u0120low",
+      "land"
+    ],
+    "final_token": "land"
+  },
+  {
+    "example_id": 93,
+    "target": "lowland",
+    "predicted": "highland",
+    "rank": 59,
+    "context_tail": " The corn crake is mainly a lowland",
+    "target_pieces": [
+      "\u0120low",
+      "land"
+    ],
+    "final_token": "land"
+  },
+  {
+    "example_id": 94,
+    "target": "lowland",
+    "predicted": "highland",
+    "rank": 59,
+    "context_tail": " Infantry from the 52nd ( Lowland",
+    "target_pieces": [
+      "\u0120low",
+      "land"
+    ],
+    "final_token": "land"
+  },
+  {
+    "example_id": 95,
+    "target": "lowland",
+    "predicted": "mendes",
+    "rank": 26,
+    "context_tail": ", was placed in command of all the advanced troops : the 2nd Light Horse Brigade and the New Zealand Mounted Rifles Brigades at Romani and an infantry division ; the 52nd ( Lowland",
+    "target_pieces": [
+      "\u0120low",
+      "land"
+    ],
+    "final_token": "land"
+  },
+  {
+    "example_id": 108,
+    "target": "finland",
+    "predicted": "highland",
+    "rank": 53,
+    "context_tail": "ion by winning the 1979 \u2013 80 Football League , entering as English champions . Their opponents in the first round were Finnish champions Oulun Palloseura . The first leg in Finland",
+    "target_pieces": [
+      "\u0120fin",
+      "land"
+    ],
+    "final_token": "land"
+  },
+  {
+    "example_id": 109,
+    "target": "finland",
+    "predicted": "casey",
+    "rank": 110,
+    "context_tail": "pically grows in small clusters or sometimes singly . The fungus fruits from late spring to early winter . A study of litter @-@ decomposing fungi in a coniferous forest in Finland",
+    "target_pieces": [
+      "\u0120fin",
+      "land"
+    ],
+    "final_token": "land"
+  },
+  {
+    "example_id": 110,
+    "target": "finland",
+    "predicted": "rizal",
+    "rank": 64,
+    "context_tail": "1 ) , Sweden lost all its territories in the Baltic states and suffered Russian raids in Finland and along the chain of islands and archipelagos stretching from the Gulf of Finland",
+    "target_pieces": [
+      "\u0120fin",
+      "land"
+    ],
+    "final_token": "land"
+  },
+  {
+    "example_id": 111,
+    "target": "finland",
+    "predicted": "guadalcanal",
+    "rank": 76,
+    "context_tail": "as been delivered . Venezuela and the US , which promised the major share of reconstruction funds , have disbursed only 24 percent and 30 percent , respectively . Japan and Finland",
+    "target_pieces": [
+      "\u0120fin",
+      "land"
+    ],
+    "final_token": "land"
+  },
+  {
+    "example_id": 141,
+    "target": "xenon",
+    "predicted": "highland",
+    "rank": 13,
+    "context_tail": " 2 with xenon",
+    "target_pieces": [
+      "\u0120xen",
+      "on"
+    ],
+    "final_token": "on"
+  },
+  {
+    "example_id": 142,
+    "target": "xenon",
+    "predicted": "highland",
+    "rank": 13,
+    "context_tail": " After Neil Bartlett 's discovery in 1962 that xenon can form chemical compounds , a large number of xenon compounds have been discovered and described . Almost all known xenon",
+    "target_pieces": [
+      "\u0120xen",
+      "on"
+    ],
+    "final_token": "on"
+  },
+  {
+    "example_id": 143,
+    "target": "xenon",
+    "predicted": "highland",
+    "rank": 13,
+    "context_tail": "re xenon forms a chemical bond , xenon can form clathrates \u2014 substances where xenon atoms or pairs are trapped by the crystalline lattice of another compound . One example is xenon",
+    "target_pieces": [
+      "\u0120xen",
+      "on"
+    ],
+    "final_token": "on"
+  },
+  {
+    "example_id": 156,
+    "target": "galveston",
+    "predicted": "teotihuacan",
+    "rank": 47,
+    "context_tail": "inue to be strong contributors to the economy . By 1959 , the city of Houston had long out @-@ paced Galveston in population and economic growth . Beginning in 1957 , the Galveston",
+    "target_pieces": [
+      "\u0120gal",
+      "vest",
+      "on"
+    ],
+    "final_token": "on"
+  },
+  {
+    "example_id": 157,
+    "target": "galveston",
+    "predicted": "highland",
+    "rank": 16,
+    "context_tail": " The city is also home to a 30 @-@ bed acute burns hospital for children , the Shriners Burns Hospital at Galveston",
+    "target_pieces": [
+      "\u0120gal",
+      "vest",
+      "on"
+    ],
+    "final_token": "on"
+  },
+  {
+    "example_id": 158,
+    "target": "galveston",
+    "predicted": "highland",
+    "rank": 16,
+    "context_tail": " Galveston",
+    "target_pieces": [
+      "\u0120gal",
+      "vest",
+      "on"
+    ],
+    "final_token": "on"
+  },
+  {
+    "example_id": 159,
+    "target": "galveston",
+    "predicted": "highland",
+    "rank": 16,
+    "context_tail": " The Galveston",
+    "target_pieces": [
+      "\u0120gal",
+      "vest",
+      "on"
+    ],
+    "final_token": "on"
+  },
+  {
+    "example_id": 172,
+    "target": "simon",
+    "predicted": "highland",
+    "rank": 8,
+    "context_tail": " Show creator David Simon",
+    "target_pieces": [
+      "\u0120sim",
+      "on"
+    ],
+    "final_token": "on"
+  },
+  {
+    "example_id": 173,
+    "target": "simon",
+    "predicted": "hardy",
+    "rank": 85,
+    "context_tail": "rthwest , Simon continued on a west @-@ northwestward path . The tropical storm continued to strengthen to its peak intensity of 70 mph ( 110 km / h ) by late on October 11 . Simon",
+    "target_pieces": [
+      "\u0120sim",
+      "on"
+    ],
+    "final_token": "on"
+  },
+  {
+    "example_id": 174,
+    "target": "simon",
+    "predicted": "hardy",
+    "rank": 108,
+    "context_tail": "verage . Sixteen of those named storms , twice the average and four more than the previous record , reached hurricane intensity . Only Cristina , Douglas , Aka , Rachel , and Simon",
+    "target_pieces": [
+      "\u0120sim",
+      "on"
+    ],
+    "final_token": "on"
+  },
+  {
+    "example_id": 175,
+    "target": "simon",
+    "predicted": "hardy",
+    "rank": 48,
+    "context_tail": "l of Lincoln as an assistant to Thomas Dudley in 1622 . There is some uncertainty about whether Bradstreet returned to Emmanuel College in 1623 \u2013 1624 . According to Venn , a Simon",
+    "target_pieces": [
+      "\u0120sim",
+      "on"
+    ],
+    "final_token": "on"
+  },
+  {
+    "example_id": 189,
+    "target": "eaton",
+    "predicted": "highland",
+    "rank": 124,
+    "context_tail": " Eaton",
+    "target_pieces": [
+      "\u0120eat",
+      "on"
+    ],
+    "final_token": "on"
+  },
+  {
+    "example_id": 190,
+    "target": "eaton",
+    "predicted": "highland",
+    "rank": 124,
+    "context_tail": " Charles Eaton",
+    "target_pieces": [
+      "\u0120eat",
+      "on"
+    ],
+    "final_token": "on"
+  },
+  {
+    "example_id": 191,
+    "target": "eaton",
+    "predicted": "highland",
+    "rank": 124,
+    "context_tail": " As senior air commander in the region , Eaton",
+    "target_pieces": [
+      "\u0120eat",
+      "on"
+    ],
+    "final_token": "on"
+  },
+  {
+    "example_id": 204,
+    "target": "algernon",
+    "predicted": "evacuees",
+    "rank": 126,
+    "context_tail": "00 , BBC Radio 3 broadcast a new adaptation directed by Howard Davies starring Geraldine McEwan as Lady Bracknell , Simon Russell Beale as Jack Worthing , Julian Wadham as Algernon",
+    "target_pieces": [
+      "\u0120alg",
+      "ern",
+      "on"
+    ],
+    "final_token": "on"
+  },
+  {
+    "example_id": 205,
+    "target": "algernon",
+    "predicted": "gusts",
+    "rank": 109,
+    "context_tail": "t cut was the removal of the character of Mr. Gribsby , a solicitor who comes from London to arrest the profligate \" Ernest \" ( i.e. , Jack ) for his unpaid dining bills . Algernon",
+    "target_pieces": [
+      "\u0120alg",
+      "ern",
+      "on"
+    ],
+    "final_token": "on"
+  }
+]
